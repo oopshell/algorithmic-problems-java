@@ -1,5 +1,13 @@
 
-/.idea
-.DS_Store
-/out/production
+# IntelliJ IDEA project files
+.idea/
 *.iml
+
+# Logs
+*.log
+
+# Compiled class files
+out/
+
+# Mac OS X
+.DS_Store
