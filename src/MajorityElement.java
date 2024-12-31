@@ -3,7 +3,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class MajorityElement {
+
     // use built-in sort
     public static int majorityElement1(int[] nums) {
         Arrays.sort(nums);
@@ -13,6 +15,7 @@ public class MajorityElement {
     // Space complexity: O(logn)
     // java.util.Arrays.sort uses a Dual-Pivot Quicksort algorithm for primitive types (such as int, char, etc.)
     // and a modified Timsort algorithm for objects.
+
 
     // use HashMap
     public static int majorityElement2(int[] nums) {
@@ -28,6 +31,9 @@ public class MajorityElement {
         }
         return 0;  // If no majority element is found in the hash map, the code returns 0 as the default value
     }
+    // Time complexity: O(n)
+    // Space complexity: O(n)
+
 
     // use Boyer-Moore Voting Algorithm
     public static int majorityElement3(int[] nums) {
@@ -51,5 +57,7 @@ public class MajorityElement {
     public static void main(String[] args) {
         int[] nums = {3, 2, 3};
         System.out.println(majorityElement1(nums)); // 3
+        System.out.println(majorityElement2(nums)); // 3
+        System.out.println(majorityElement3(nums)); // 3
     }
 }
