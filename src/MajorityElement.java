@@ -53,6 +53,9 @@ public class MajorityElement {
         }
         return candidate;
     }
+    // Time complexity: O(n)
+    // Space complexity: O(1)
+
 
     public static void main(String[] args) {
         int[] nums = {3, 2, 3};
