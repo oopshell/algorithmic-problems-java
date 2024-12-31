@@ -30,7 +30,23 @@ public class MajorityElement {
     }
 
     // use Boyer-Moore Voting Algorithm
-    
+    public static int majorityElement3(int[] nums) {
+        int count = 0;
+        Integer candidate = null;  // Integer is used instead of int to take advantage of the null value, especially when the array contains all possible int values
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+                count++;
+            } else {
+                if (candidate == num) {
+                    count++;
+                } else {
+                    count--;
+                }
+            }
+        }
+        return candidate;
+    }
 
     public static void main(String[] args) {
         int[] nums = {3, 2, 3};
