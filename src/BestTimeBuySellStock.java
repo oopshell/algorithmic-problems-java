@@ -8,13 +8,23 @@ public class BestTimeBuySellStock {
         int maxProfitBuyingDate = 0;
         for (int i = 0; i < prices.length; i++) {
             int currentPrice = prices[i];
+//            if (currentPrice < minPrice) {
+//                minPrice = prices[i];
+//                minPriceDate = i;
+//            }
+//            if (currentPrice - minPrice > maxProfitValue) {
+//                maxProfitValue = currentPrice - minPrice;
+//                maxProfitBuyingDate = minPriceDate;
+//            }
             if (currentPrice < minPrice) {
                 minPrice = prices[i];
-                minPriceDate = i + 1;
-            }
-            if (currentPrice - minPrice > maxProfitValue) {
-                maxProfitValue = currentPrice - minPrice;
-                maxProfitBuyingDate = minPriceDate;
+                minPriceDate = i;
+            } else {
+                int profit = currentPrice - minPrice;
+                if (profit > maxProfitValue) {
+                    maxProfitValue = currentPrice - minPrice;
+                    maxProfitBuyingDate = minPriceDate;
+                }
             }
         }
         System.out.println("Buying stock on Day " + maxProfitBuyingDate + " can get max profit, which is " + maxProfitValue);
