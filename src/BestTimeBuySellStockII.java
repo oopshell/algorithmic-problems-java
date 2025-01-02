@@ -6,20 +6,17 @@ public class BestTimeBuySellStockII {
         int localMaxProfit = 0;
         int localMinPrice = Integer.MAX_VALUE;
         int localMaxPrice = Integer.MIN_VALUE;
-        for (int i = 0; i < prices.length; i++) {
-            int currentPrice = prices[i];
+        for (int currentPrice : prices) {
             if (currentPrice < localMinPrice) {
                 localMinPrice = currentPrice;
-            }
-            else {
+            } else {
                 if (currentPrice >= localMaxPrice) {
                     int profit = currentPrice - localMinPrice;
                     if (profit > localMaxProfit) {
                         localMaxProfit = profit;
                         localMaxPrice = currentPrice;
                     }
-                }
-                else {
+                } else {
                     totalProfit += localMaxProfit;
                     localMaxProfit = 0;
                     localMinPrice = currentPrice;
